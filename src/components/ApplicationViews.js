@@ -1,10 +1,14 @@
-import React from "react"
-import { Route } from "react-router-dom"
+import React from "react";
+import { Route } from "react-router-dom";
+import { MapForm } from "./map/Map.js"
+
 
 export const ApplicationViews = () => {
-    return <>
-        <main>
-            Application views
-        </main>
+  return (
+    <>
+      <Route exact path="/map">
+        <MapForm />
+      </Route>
     </>
-}
+  );
+};

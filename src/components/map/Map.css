@@ -1,0 +1,9 @@
+body {
+    overflow: hidden;
+}
+
+canvas {
+    width: 230% !important;
+    height: 230% !important;
+    aspect-ratio: auto 2732 / 2048;
+}
