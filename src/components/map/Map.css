@@ -7,3 +7,60 @@ canvas {
     height: 230% !important;
     aspect-ratio: auto 2732 / 2048;
 }
+.MapContainer {
+    background-image: url(https://res.cloudinary.com/dvdug0mzg/image/upload/v1655239993/Chattanooga%20Map/BG_test_ajxead.png);
+}
+
+
+
+
+
+
+
+/* The Overlay (background) */
+.info-box {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 1;
+    max-width: 25%;
+    z-index: 1; /* Sit on top */
+    position: absolute;
+    border: none;
+    background-color: rgba(26, 66, 9, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+  /* The navigation links inside the overlay */
+.info-box h1, h2 {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #ffffff;
+    display: block; /* Display block instead of inline */
+}
+
+.info-box p {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    display: block; /* Display block instead of inline */
+}
+
+.info-box img {
+    position: fixed;
+    max-width: 30%;
+    margin-top: 3%;
+    display: block;
+}
+
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+.overlay h1, p {font-size: 20px}
+.overlay {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+}
+}

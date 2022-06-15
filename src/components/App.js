@@ -7,15 +7,15 @@ import { Register } from "./auth/Register"
 export const App = () => (
     <>
         <Route render={() => {
-            // if (localStorage.getItem("auth_token")) {
+            if (localStorage.getItem("auth_token")) {
                 return (
                     <>
                         <ApplicationViews />
                     </>
                 );
-            // } else {
-            //     return <Redirect to="/login" />
-            // }
+            } else {
+                return <Redirect to="/login" />
+            }
         }} />
 
         <Route path="/login">
