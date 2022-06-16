@@ -1,0 +1,51 @@
+#menu-background {
+    background-color:#C83B10;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.side-menu {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+    width: 25%;
+}
+
+#profile-header-text {
+    color: white;
+}
+
+.menu-buttons {
+    margin-top: 5%;
+    width: 70%;
+    border-radius: 8px;
+    border: none;
+    color: white;
+}
+
+#map-button {
+    background-color: #A6DE06;
+}
+
+#profile-pic-button {
+    background-color: #1E9485;
+}
+
+#discoveries-button {
+    background-color: #C83B10;
+}
+
+#logout-button {
+    background-color: #DEAE06;
+}
+
+
+#discoveries-header {
+    color: white;
+}
+
+
+#discoveries-list {
+    color: white;
+}
