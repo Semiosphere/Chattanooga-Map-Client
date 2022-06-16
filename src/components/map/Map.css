@@ -1,5 +1,25 @@
+.top-banner {
+  position: fixed;
+  z-index: 1;
+}
+
+.cmc-logo-container {
+  position: fixed;
+  z-index: 1;
+  top: 90%;
+}
+
+#cmc-logo {
+  width: 50%;
+}
+
+#MapHeaderText {
+  color: aliceblue;
+}
+
 body {
     overflow: hidden;
+    background-image: url(https://res.cloudinary.com/dvdug0mzg/image/upload/v1655239993/Chattanooga%20Map/BG_test_ajxead.png);
 }
 
 canvas {
@@ -13,54 +33,51 @@ canvas {
 
 
 
-
-
-
-
 /* The Overlay (background) */
 .info-box {
-    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    
     height: 100%;
-    width: 1;
-    max-width: 25%;
+    width: 30%;
+    position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    position: absolute;
-    border: none;
-    background-color: rgba(26, 66, 9, 0.9); /* Black w/opacity */
+    right: 0%;
+    background-image: linear-gradient(.25turn, rgba(16, 41, 2, 0), 20%, rgb(16, 41, 2)); /*Black w/opacity*/
     overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-}
-
-  /* The navigation links inside the overlay */
-.info-box h1, h2 {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #ffffff;
-    display: block; /* Display block instead of inline */
-}
-
-.info-box p {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #ffffff;
-    display: block; /* Display block instead of inline */
-}
-
-.info-box img {
-    position: fixed;
-    max-width: 30%;
-    margin-top: 3%;
-    display: block;
-}
-
+    overflow-y: hidden; /* Disable vertical scroll */
+    transition: 0.3s; /* transition effect to slide in */
+    /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.911)); */
+  }
+  
+  .hide {
+    visibility: hidden;
+    width: 0%;
+  }
+  
   /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 450px) {
-.overlay h1, p {font-size: 20px}
-.overlay {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
+  @media screen and (max-height: 450px) {
+    #location-name, #location-coordinates, #location-description {font-size: 20px}
+    .info-box {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+
+#location-name, #location-coordinates, #location-description {
+  color: aliceblue;
+  padding: 12px;
+  margin-left: 10%;
+  max-width: 80%;
+  transition: 0.3s ease-in-out; /* transition effect to slide in */
 }
+
+#location-art {
+  margin-left: 10%;
+  max-width: 80%;
+  max-height: 50%;
+  position: absolute;
+  bottom: 15%;
+  z-index: 1;
+  transition: 0.3s ease-in-out; /* transition effect to slide in */
+  transition-delay: .5s !important;
 }
