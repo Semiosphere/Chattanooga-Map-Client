@@ -79,5 +79,21 @@ canvas {
   bottom: 15%;
   z-index: 1;
   transition: 0.3s ease-in-out; /* transition effect to slide in */
-  transition-delay: .5s !important;
+}
+
+#profile-page-button {
+  position:absolute;
+  top: 78%;
+  z-index: 3;
+  width: 8%;
+  opacity: 30%;
+  max-width: 125px;
+  margin-left: 1%;
+  transition: 0.3s ease-in-out; /* transition effect to slide in */
+}
+
+#profile-page-button:hover {
+  opacity: 100%;
+  width: 12%;
+  transition: 0.1s ease-in-out; /* transition effect to slide in */
 }

@@ -7,9 +7,10 @@ export const ProfileForm = () => {
 
     const history = useHistory();
 
-    const [ discoveries, setDiscoveries ] = useState([]);
+    //fetches from "profile locations" table in database
+    const [ discoveries, setDiscoveries ] = useState({});
     useEffect(() => {
-      fetch("http://localhost:8000/profilelocations", {headers:{
+      fetch("http://localhost:8000/profiles/profile", {headers:{
         "Authorization": `Token ${localStorage.getItem("auth_token")}`
       }} )
       .then((res) => res.json())
@@ -18,9 +19,7 @@ export const ProfileForm = () => {
       });
     }, [] );
     
-    
-    
-    
+
     return (
         <>
             <div id="menu-background" style={{ height: '100vh'}}>
@@ -33,13 +32,14 @@ export const ProfileForm = () => {
                     <button className="menu-buttons" id="logout-button">Logout</button>
                 </div>
 
-                <div id="discoveries-view">
+
+                <div id={`discoveries-view`}>
                     <h1 id="discoveries-header">Places I've discovered!</h1>
-                    {discoveries.map((discovery) => {
+                    {discoveries.locations?.map((discovery) => {
                         return (
                             <>
                                 <ul id="discoveries-list">
-                                    <li>{discovery.location.name}</li>
+                                    <li>{discovery.name}</li>
                                 </ul>
                             </>
                         )
@@ -58,6 +58,5 @@ export const ProfileForm = () => {
 
 
 
-//profile page is currently displaying the discovered locations of ALL users
 
 //need white button border when that button is currently selected

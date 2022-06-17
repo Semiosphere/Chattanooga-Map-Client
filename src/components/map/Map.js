@@ -8,6 +8,7 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { Map, Marker } from 'react-canvas-map'
+import { useHistory } from "react-router-dom";
 import "./Map.css"
 
 
@@ -16,6 +17,7 @@ export const MapForm = () => {
   const markerImage = new Image()
   markerImage.src = `https://res.cloudinary.com/dvdug0mzg/image/upload/v1655240156/Chattanooga%20Map/Transparent_Marker-svg_xfl7po.svg`
 
+  const history = useHistory()
 
   //The following code assigns click events to specific coordinates
   const [ markers, setMarkers ] = useState([]);
@@ -29,9 +31,39 @@ export const MapForm = () => {
       });
     }, [] );
 
+    const [ profile, setProfiles ] = useState({});
+      useEffect(() => {
+        fetch("http://localhost:8000/profiles/profile", {headers:{
+          "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }} )
+        .then((res) => res.json())
+        .then((profile) => {
+          setProfiles(profile);
+        });
+    }, [] );
+
 
 
   const [activeMarker, setActiveMarker] = useState({})
+//TODO: write function to add profile_id to discovered_by table
+  const postDiscovery = () => {
+    fetch("http://localhost:8000/locations",
+      {
+        method: "POST",
+        headers: {
+          "Authorization": `Token ${localStorage.getItem("auth_token")}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(marker),
+      }
+    )
+  }
+
+  const handleMarkerClick = (marker) => {
+    setActiveMarker(marker)
+    
+  }
+
   return (
     <>
 
@@ -41,17 +73,20 @@ export const MapForm = () => {
           <img id="cmc-logo" src="https://res.cloudinary.com/dvdug0mzg/image/upload/v1655402702/Chattanooga%20Map/CMC_text_mxyiqp.png"></img>
         </div>
 
+
         <div className="top-banner" id="map-banner">
           <h1 id="MapHeaderText">Explore the map and try clicking on anything interesting!</h1>
         </div>
         
+        <img id="profile-page-button" src={profile.profile_pic?.src} onClick={() => history.push(`/profile`)}></img>
+
         <div className={`info-box ${activeMarker.name?"show":"hide"}`} id="infoBox">
           <h1 id="location-name">{activeMarker.name}</h1>
           <h2 id="location-coordinates">{activeMarker.coordinates}</h2>
           <p id="location-description">{activeMarker.description}</p>
           <img
-            id="location-art" src={activeMarker.character_art}
-          ></img>
+            id="location-art" src={activeMarker.character_art}>
+          </img>
         </div>
         
         <Map
@@ -71,7 +106,7 @@ export const MapForm = () => {
                     coords={marker}
                     image={markerImage}
                     onClick={() => {
-                      setActiveMarker(marker)
+                      handleMarkerClick(marker)
                     }}
                     markerIndex={markerIndex}
                   />
