@@ -2,7 +2,6 @@
 
 //On the map page, a user can click and grab to pan around the map.
 //A user can click on different icons on the map to reveal a sidebar with info.
-//A user can click on the flag icon to place a flag on the map
 //A user can click their profile picture to route to their profile
 
 import React, { useState, useEffect } from "react";
@@ -30,7 +29,7 @@ export const MapForm = () => {
         setMarkers(markerArray);
       });
     }, [] );
-
+//fetch profile info from server
     const [ profile, setProfiles ] = useState({});
       useEffect(() => {
         fetch("http://localhost:8000/profiles/profile", {headers:{
@@ -45,7 +44,7 @@ export const MapForm = () => {
 
 
   const [activeMarker, setActiveMarker] = useState({})
-//TODO: write function to add profile_id to discovered_by table || Next step: add backend
+//This function is added to the onClick below to add the clicked location to the logged in user's list of discoveries
   const postDiscovery = (location) => {
     fetch(`http://localhost:8000/locations/${location.id}/discover`,
       {
