@@ -45,16 +45,15 @@ export const MapForm = () => {
 
 
   const [activeMarker, setActiveMarker] = useState({})
-//TODO: write function to add profile_id to discovered_by table
-  const postDiscovery = () => {
-    fetch("http://localhost:8000/locations",
+//TODO: write function to add profile_id to discovered_by table || Next step: add backend
+  const postDiscovery = (location) => {
+    fetch(`http://localhost:8000/locations/${location.id}/discover`,
       {
         method: "POST",
         headers: {
           "Authorization": `Token ${localStorage.getItem("auth_token")}`,
           "Content-Type": "application/json",
-        },
-        body: JSON.stringify(marker),
+        }
       }
     )
   }
@@ -107,6 +106,7 @@ export const MapForm = () => {
                     image={markerImage}
                     onClick={() => {
                       handleMarkerClick(marker)
+                      postDiscovery(marker)
                     }}
                     markerIndex={markerIndex}
                   />
