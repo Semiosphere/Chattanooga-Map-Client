@@ -59,6 +59,11 @@ export const ProfilePicForm = () => {
             .then(profileFetcher)
     }
 
+    const logout = () => {
+        localStorage.removeItem("gourdgeous_user");
+        history.push(`/login`);
+    };
+
 
     return (
         <>
@@ -69,7 +74,7 @@ export const ProfilePicForm = () => {
                     <button className="menu-buttons" id="map-button" onClick={() => history.push(`/map`)}>Return to map</button>
                     <button className="menu-buttons" id="profile-pic-button" onClick={() => history.push(`/profilepic`)}>Choose profile pic</button>
                     <button className="menu-buttons" id="discoveries-button" onClick={() => history.push(`/discoveries`)}>Discoveries</button>
-                    <button className="menu-buttons" id="logout-button">Logout</button>
+                    <button className="menu-buttons" id="logout-button" onClick={() => logout()}>Logout</button>
                 </div>
 
 

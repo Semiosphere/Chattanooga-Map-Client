@@ -18,6 +18,11 @@ export const DiscoveryForm = () => {
         setDiscoveries(discoveryArray);
       });
     }, [] );
+
+    const logout = () => {
+        localStorage.removeItem("auth_token");
+        history.push(`/login`);
+      };
     
 
     return (
@@ -29,7 +34,7 @@ export const DiscoveryForm = () => {
                     <button className="menu-buttons" id="map-button" onClick={() => history.push(`/map`)}>Return to map</button>
                     <button className="menu-buttons" id="profile-pic-button" onClick={() => history.push(`/profilepic`)}>Choose profile pic</button>
                     <button className="menu-buttons" id="discoveries-button">Discoveries</button>
-                    <button className="menu-buttons" id="logout-button">Logout</button>
+                    <button className="menu-buttons" id="logout-button" onClick={() => logout()}>Logout</button>
                 </div>
 
 
@@ -54,9 +59,3 @@ export const DiscoveryForm = () => {
         </>
     )
 }
-
-
-
-
-
-//need white button border when that button is currently selected
