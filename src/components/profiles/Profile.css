@@ -4,3 +4,7 @@
     flex-wrap: wrap;
     flex-direction: row;
 }
+
+#profile-header {
+    color:aliceblue;
+}

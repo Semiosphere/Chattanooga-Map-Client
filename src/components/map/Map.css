@@ -18,60 +18,76 @@
 }
 
 body {
-    overflow: hidden;
-    
+  overflow: hidden;
+
 }
 
 canvas {
-    position: absolute;
-    width: 230% !important;
-    height: 230% !important;
-    aspect-ratio: auto 2732 / 2048;
-    left: -60%;
-    bottom: -70%;
+  position: absolute;
+  width: 230% !important;
+  height: 230% !important;
+  aspect-ratio: auto 2732 / 2048;
+  left: -60%;
+  bottom: -70%;
 }
+
 .MapContainer {
-    background-image: url(https://res.cloudinary.com/dvdug0mzg/image/upload/v1655239993/Chattanooga%20Map/BG_test_ajxead.png);
+  background-image: url(https://res.cloudinary.com/dvdug0mzg/image/upload/v1655239993/Chattanooga%20Map/BG_test_ajxead.png);
 }
 
 
 
 /* The Overlay (background) */
 .info-box {
-    
-    height: 100%;
-    width: 30%;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    right: 0%;
-    background-image: linear-gradient(.25turn, rgba(16, 41, 2, 0), 20%, rgb(16, 41, 2)); /*Black w/opacity*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    overflow-y: hidden; /* Disable vertical scroll */
-    transition: 0.3s; /* transition effect to slide in */
-    /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.911)); */
-  }
-  
-  .hide {
-    visibility: hidden;
-    width: 0%;
-  }
-  
-  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-  @media screen and (max-height: 450px) {
-    #location-name, #location-coordinates, #location-description {font-size: 20px}
-    .info-box {
-      font-size: 40px;
-      top: 15px;
-      right: 35px;
-    }
+
+  height: 100%;
+  width: 30%;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  right: 0%;
+  background-image: linear-gradient(.25turn, rgba(16, 41, 2, 0), 20%, rgb(16, 41, 2));
+  /*Black w/opacity*/
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  overflow-y: hidden;
+  /* Disable vertical scroll */
+  transition: 0.3s;
+  /* transition effect to slide in */
+  /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.911)); */
+}
+
+.hide {
+  visibility: hidden;
+  width: 0%;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+
+  #location-name,
+  #location-coordinates,
+  #location-description {
+    font-size: 20px
   }
 
-#location-name, #location-coordinates, #location-description {
+  .info-box {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+#location-name,
+#location-coordinates,
+#location-description {
   color: aliceblue;
   padding: 12px;
   margin-left: 10%;
   max-width: 80%;
-  transition: 0.3s ease-in-out; /* transition effect to slide in */
+  transition: 0.3s ease-in-out;
+  /* transition effect to slide in */
 }
 
 #location-art {
@@ -81,21 +97,35 @@ canvas {
   position: absolute;
   bottom: 15%;
   z-index: 1;
-  transition: 0.3s ease-in-out; /* transition effect to slide in */
+  transition: 0.3s ease-in-out;
+  /* transition effect to slide in */
 }
 
 #profile-page-button {
-  position:absolute;
+  position: absolute;
   top: 70%;
   z-index: 3;
-  width: 7%;
+  width: 5%;
   opacity: 30%;
   margin-left: 1%;
-  transition: 0.3s ease-in-out; /* transition effect to slide in */
+  transition: 0.3s ease-in-out;
+  /* transition effect to slide in */
 }
 
 #profile-page-button:hover {
   opacity: 100%;
-  width: 10%;
-  transition: 0.1s ease-in-out; /* transition effect to slide in */
+  width: 7%;
+  transition: 0.1s ease-in-out;
+  /* transition effect to slide in */
+}
+
+.instructions-modal {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 10;
+  background-color: rgba(240, 248, 255, 0.5);
+  width: 100%;
+  height: 100%;
+
 }

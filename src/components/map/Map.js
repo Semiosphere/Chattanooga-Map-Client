@@ -4,21 +4,25 @@
 //A user can click on different icons on the map to reveal a sidebar with info.
 //A user can click their profile picture to route to their profile
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 import { Map, Marker } from 'react-canvas-map'
 import { useHistory } from "react-router-dom";
 import "./Map.css"
 
-
+//This component handles functionality of the main page
 export const MapForm = () => {
+
   
+  //sets a transparent image as the marker
   const markerImage = new Image()
   markerImage.src = `https://res.cloudinary.com/dvdug0mzg/image/upload/v1655240156/Chattanooga%20Map/Transparent_Marker-svg_xfl7po.svg`
 
   const history = useHistory()
 
   //The following code assigns click events to specific coordinates
+  //These coordinates are saved as values on each location object in the database
+  //This way, clicking a specific area of the Map image fetches the corresponding location
   const [ markers, setMarkers ] = useState([]);
     useEffect(() => {
       fetch("http://localhost:8000/locations", {headers:{
@@ -29,7 +33,8 @@ export const MapForm = () => {
         setMarkers(markerArray);
       });
     }, [] );
-//fetch profile info from server
+
+  //fetch profile info from server to display user's profile pic and save discoveries
     const [ profile, setProfiles ] = useState({});
       useEffect(() => {
         fetch("http://localhost:8000/profiles/profile", {headers:{
@@ -41,10 +46,8 @@ export const MapForm = () => {
         });
     }, [] );
 
-
-
   const [activeMarker, setActiveMarker] = useState({})
-//This function is added to the onClick below to add the clicked location to the logged in user's list of discoveries
+  //This function is added to the onClick below to add the clicked location to the logged in user's list of discoveries
   const postDiscovery = (location) => {
     fetch(`http://localhost:8000/locations/${location.id}/discover`,
       {
@@ -61,20 +64,28 @@ export const MapForm = () => {
     setActiveMarker(marker)
     
   }
+  //Setting state variable to show instruction dialog box on page load
+  const [ modalDisplay, setModalDisplay ] = useState("block");
+
 
   return (
     <>
 
       <div className="MapContainer" style={{ height: '100vh'}}>
+        <div className="instructions-modal" style={{ display: modalDisplay }}>
+          <h1 id="modal">Explore the map by clicking and dragging</h1>
+          <button id="close-modal-button" onClick={() => setModalDisplay('none')}>
+            Get started!
+          </button>
+        </div>
 
         <div className="cmc-logo-container">
           <img id="cmc-logo" src="https://res.cloudinary.com/dvdug0mzg/image/upload/v1655402702/Chattanooga%20Map/CMC_text_mxyiqp.png"></img>
         </div>
 
-
-        <div className="top-banner" id="map-banner">
+        {/* <div className="top-banner" id="map-banner">
           <h1 id="MapHeaderText">Explore the map and try clicking on anything interesting!</h1>
-        </div>
+        </div> */}
         
         <img id="profile-page-button" src={profile.profile_pic?.src} onClick={() => history.push(`/profile`)}></img>
 

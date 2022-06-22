@@ -37,9 +37,8 @@ export const ProfileForm = () => {
 
                 <div id={`profile-view`}>
                     <h1 id="profile-header">Welcome to Chattanooga!</h1>
-        
-                                <p>Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-                                </p>
+                        <h2 className="profile-questions">Who are the Chatturday Morning Cartoons?</h2>
+                        <p className="profile-answers"></p>
                                 
                 </div>
 
