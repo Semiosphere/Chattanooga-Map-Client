@@ -23,9 +23,12 @@ body {
 }
 
 canvas {
+    position: absolute;
     width: 230% !important;
     height: 230% !important;
     aspect-ratio: auto 2732 / 2048;
+    left: -60%;
+    bottom: -70%;
 }
 .MapContainer {
     background-image: url(https://res.cloudinary.com/dvdug0mzg/image/upload/v1655239993/Chattanooga%20Map/BG_test_ajxead.png);
