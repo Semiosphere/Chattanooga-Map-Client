@@ -80,14 +80,9 @@ canvas {
   width: 0%;
 }
 
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+/* When the height of the screen is less than 450 pixels, change the font-size of the links so they don't overlap */
 @media screen and (max-height: 450px) {
 
-  #location-name,
-  #location-coordinates,
-  #location-description {
-    font-size: 20px
-  }
 
   .info-box {
     font-size: 40px;
@@ -96,15 +91,29 @@ canvas {
   }
 }
 
+#location-name {
+  font-family: 'introrustg-base2line';
+  font-size: 250%;
+}
+
+#location-coordinates {
+  font-family: 'introheadr-base';
+  font-size: 200%;
+}
+
 #location-name,
 #location-coordinates,
 #location-description {
   color: aliceblue;
-  padding: 12px;
   margin-left: 10%;
   max-width: 80%;
   transition: 0.3s ease-in-out;
   /* transition effect to slide in */
+}
+
+#location-description {
+  line-height: 1.5;
+  font-size: 110%;
 }
 
 #location-art {
@@ -112,8 +121,8 @@ canvas {
   max-width: 80%;
   max-height: 50%;
   position: absolute;
-  bottom: 15%;
-  z-index: 1;
+  bottom: 5%;
+  z-index: 5;
   transition: 0.3s ease-in-out;
   /* transition effect to slide in */
 }

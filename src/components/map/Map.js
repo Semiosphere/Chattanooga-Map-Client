@@ -90,8 +90,8 @@ export const MapForm = () => {
         <img id="profile-page-button" src={profile.profile_pic?.src} onClick={() => history.push(`/profile`)}></img>
 
         <div className={`info-box ${activeMarker.name?"show":"hide"}`} id="infoBox">
-          <h1 id="location-name">{activeMarker.name}</h1>
-          <h2 id="location-coordinates">{activeMarker.coordinates}</h2>
+          <p id="location-name">{activeMarker.name}</p>
+          <p id="location-coordinates">{activeMarker.coordinates}</p>
           <p id="location-description">{activeMarker.description}</p>
           <img
             id="location-art" src={activeMarker.character_art}>
