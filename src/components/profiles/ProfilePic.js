@@ -7,19 +7,19 @@ export const ProfilePicForm = () => {
 
     const history = useHistory();
 
-    //fetches from "profile locations" table in database;
-    const [pics, setPics] = useState([]);
-    useEffect(() => {
-        fetch("http://localhost:8000/profilepics", {
-            headers: {
-                "Authorization": `Token ${localStorage.getItem("auth_token")}`
-            }
-        })
-            .then((res) => res.json())
-            .then((picArray) => {
-                setPics(picArray);
-            });
-    }, []);
+    // //fetches from "profile locations" table in database;
+     const [pics, setPics] = useState([]);
+    // useEffect(() => {
+    //     fetch("http://localhost:8000/profilepics", {
+    //         headers: {
+    //             "Authorization": `Token ${localStorage.getItem("auth_token")}`
+    //         }
+    //     })
+    //         .then((res) => res.json())
+    //         .then((picArray) => {
+    //             setPics(picArray);
+    //         });
+    // }, []);
 
     //fetch profile info to change profile pic
     const [profile, setProfiles] = useState({});
@@ -37,6 +37,13 @@ export const ProfilePicForm = () => {
             .then((res) => res.json())
             .then((profile) => {
                 setProfiles(profile);
+
+                const profilePics = []
+
+                profile.locations.map((profileLocation) => {
+                    profilePics.push(profileLocation.profile_pic)
+                })
+                setPics(profilePics)
             });
     }
 
@@ -70,7 +77,7 @@ export const ProfilePicForm = () => {
             <div id="profile-pic-menu-background" style={{ height: '100vh' }}>
 
                 <div className="side-menu">
-                    <h1 id="profile-header-text">My Profile</h1>
+                    <p id="profile-header-text">My Profile</p>
                     <button className="menu-buttons" id="map-button" onClick={() => history.push(`/map`)}>Return to map</button>
                     <button className="menu-buttons" id="profile-pic-button" onClick={() => history.push(`/profilepic`)}>Choose profile pic</button>
                     <button className="menu-buttons" id="discoveries-button" onClick={() => history.push(`/discoveries`)}>Discoveries</button>
@@ -79,7 +86,7 @@ export const ProfilePicForm = () => {
 
 
                 <div id={`profile-pic-view`}>
-                    <h1 id="profile-header">Select a profile pic!</h1>
+                    <p id="profile-header">Select a profile pic!</p>
                     <img id="current-profile-pic" src={profile.profile_pic?.src}></img>
                     <div id="profile-pic-container">
                         {pics.map((pic) => {

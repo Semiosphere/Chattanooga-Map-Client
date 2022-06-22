@@ -1,51 +1,58 @@
+@font-face {
+    font-family: 'introrustg-base2line';
+    src: url('introrustg-base2line-webfont.woff2') format('woff2'),
+        url('introrustg-base2line-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'introheadr-base';
+    src: url('introheadr-base-webfont.woff2') format('woff2'),
+        url('introheadr-base-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'introscriptr-h2base';
+    src: url('introscriptr-h2base-webfont.woff2') format('woff2'),
+        url('introscriptr-h2base-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #discovery-menu-background {
     background-color:#C83B10;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    align-items: baseline;
 }
 
-.side-menu {
-    display: flex;
-    flex-direction: column;
-    margin-left: 2%;
-    width: 25%;
-}
 
-#profile-header-text {
-    color: white;
+#discoveries-container {
+    display: block;
+    margin-left: 20%;
 }
-
-.menu-buttons {
-    margin-top: 5%;
-    width: 70%;
-    border-radius: 8px;
-    border: none;
-    color: white;
-}
-
-#map-button {
-    background-color: #A6DE06;
-}
-
-#profile-pic-button {
-    background-color: #1E9485;
-}
-
-#discoveries-button {
-    background-color: #C83B10;
-}
-
-#logout-button {
-    background-color: #DEAE06;
-}
-
 
 #discoveries-header {
     color: white;
+    font-family: 'introrustg-base2line';
+    font-size: 250%;
+    margin-left: 13%;
 }
-
 
 #discoveries-list {
     color: white;
+    font-family: 'introheadr-base';
+    font-size: 200%;
+    width: 50%;
+    margin-top: 5%;
+}
+
+#discoveries-view {
+    columns: 2;
+    column-gap: 10%;
+    border: solid white;
+    border-radius: 10px;
 }

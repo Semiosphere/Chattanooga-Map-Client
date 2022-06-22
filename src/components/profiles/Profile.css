@@ -1,10 +1,72 @@
+@font-face {
+    font-family: 'introrustg-base2line';
+    src: url('introrustg-base2line-webfont.woff2') format('woff2'),
+        url('introrustg-base2line-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'introheadr-base';
+    src: url('introheadr-base-webfont.woff2') format('woff2'),
+        url('introheadr-base-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 #menu-background {
     background-color:#10a3c8;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    align-items: baseline;
 }
 
 #profile-header {
     color:aliceblue;
+}
+
+/* The following styles handle consistent elements across the menu pages */
+
+.side-menu {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+    align-items: center;
+}
+
+.menu-buttons {
+    font-family: 'introheadr-base';
+    font-size: 150%;
+    margin-top: 5%;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: none;
+    color: white;
+}
+
+#profile-header-text {
+    font-family: 'introscriptr-h2base';
+    font-size: 300%;
+}
+
+#profile-header-text {
+    color: white;
+}
+
+#map-button {
+    background-color: #A6DE06;
+}
+
+#profile-pic-button {
+    background-color: #1E9485;
+}
+
+#discoveries-button {
+    background-color: #C83B10;
+}
+
+#logout-button {
+    background-color: #DEAE06;
 }

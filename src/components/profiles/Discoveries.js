@@ -30,25 +30,26 @@ export const DiscoveryForm = () => {
             <div id="discovery-menu-background" style={{ height: '100vh'}}>
 
                 <div className="side-menu">
-                    <h1 id="profile-header-text">My Profile</h1>
+                    <p id="profile-header-text">My Profile</p>
                     <button className="menu-buttons" id="map-button" onClick={() => history.push(`/map`)}>Return to map</button>
                     <button className="menu-buttons" id="profile-pic-button" onClick={() => history.push(`/profilepic`)}>Choose profile pic</button>
                     <button className="menu-buttons" id="discoveries-button">Discoveries</button>
                     <button className="menu-buttons" id="logout-button" onClick={() => logout()}>Logout</button>
                 </div>
 
-
-                <div id={`discoveries-view`}>
-                    <h1 id="discoveries-header">Places I've discovered!</h1>
-                    {discoveries.locations?.map((discovery) => {
-                        return (
-                            <>
-                                <ul id="discoveries-list">
-                                    <li>{discovery.name}</li>
-                                </ul>
-                            </>
-                        )
-                    })}
+                <div id="discoveries-container">
+                    <p id="discoveries-header">Places I've discovered!</p>
+                    <div id={`discoveries-view`}>
+                        {discoveries.locations?.map((discovery) => {
+                            return (
+                                <>
+                                    <ul id="discoveries-list">
+                                        <li>{discovery.name}</li>
+                                    </ul>
+                                </>
+                            )
+                        })}
+                    </div>
                 </div>
 
                 <div className="cmc-logo-container">

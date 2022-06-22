@@ -1,17 +1,67 @@
+@font-face {
+    font-family: 'introrustg-base2line';
+    src: url('introrustg-base2line-webfont.woff2') format('woff2'),
+        url('introrustg-base2line-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'introheadr-base';
+    src: url('introheadr-base-webfont.woff2') format('woff2'),
+        url('introheadr-base-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'introscriptr-h2base';
+    src: url('introscriptr-h2base-webfont.woff2') format('woff2'),
+        url('introscriptr-h2base-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 #profile-pic-menu-background {
-    background-color:#1E9485;
+    background-color: #1E9485;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    align-items: baseline;
 }
 
 #profile-pic-view {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     width: 50%;
+    margin-left: 15%;
+    align-items: center;
 }
 
 #single-pic {
-    width: 20%;
+    width: 12%;
+    margin: 1%;
+}
+
+#single-pic:hover {
+    
+    border-radius: 57px;
+    box-shadow: 0 0px 90px rgba(255, 255, 255, 0.664);
+    /* transition: 0.2s ease-in; */
+}
+
+
+#profile-header {
+    font-family: 'introrustg-base2line';
+    font-size: 250%;
+}
+
+#current-profile-pic {
+    width: 30%;
+    margin-bottom: 10%;
+}
+
+#profile-pic-container {
+    display: flex;
+    flex-wrap: wrap;
 }
