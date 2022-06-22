@@ -73,7 +73,7 @@ export const MapForm = () => {
 
       <div className="MapContainer" style={{ height: '100vh'}}>
         <div className="instructions-modal" style={{ display: modalDisplay }}>
-          <h1 id="modal">Explore the map by clicking and dragging</h1>
+          <p id="modal-text">Explore the map by clicking and dragging. There are 15 discoveries to be made so click on everything to find them all!</p>
           <button id="close-modal-button" onClick={() => setModalDisplay('none')}>
             Get started!
           </button>
