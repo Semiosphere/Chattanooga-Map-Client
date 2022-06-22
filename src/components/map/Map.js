@@ -89,7 +89,7 @@ export const MapForm = () => {
         
         <Map
           className="MapImage"
-          image="https://res.cloudinary.com/dvdug0mzg/image/upload/v1655239993/Chattanooga%20Map/Map_test_2_f5hnxu.png"
+          image="https://res.cloudinary.com/dvdug0mzg/image/upload/v1655857297/Chattanooga%20Map/Test_map_3_fxgqda.png"
           onClick={() => { setActiveMarker({})}}
           minZoom={1.1}
           maxZoom={0}
