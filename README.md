@@ -1,5 +1,6 @@
-This interactive map of Chattanooga, TN allows users to explore and discover locations to learn more about the city.
+The CMC Guide to Chattanooga Client
 
+This interactive map of Chattanooga, TN allows users to explore and discover locations to learn more about the city.
 
 
 Available Scripts
