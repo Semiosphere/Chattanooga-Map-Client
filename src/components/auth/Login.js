@@ -30,29 +30,34 @@ export const Login = () => {
   }
 
   return (
-    <main >
-      <dialog ref={invalidDialog}>
-        <div>Username or password was not valid.</div>
-        <button onClick={e => invalidDialog.current.close()}>Close</button>
-      </dialog>
-      <section>
-        <form onSubmit={handleLogin}>
-          <fieldset>
-            <label htmlFor="inputUsername"> Username</label>
-            <input ref={username} type="username" id="username" placeholder="Username address" required autoFocus />
+    <main className="auth-container" style={{ height: '100vh'}}>
+        <dialog className="dialog" ref={invalidDialog}>
+          <div>Username or password was not valid.</div>
+          <button className="button--close" onClick={e => invalidDialog.current.close()}>Close</button>
+        </dialog>
+        <section>
+          <form className="form--login" onSubmit={handleLogin}>
+            <p id="login--title">The Chatturday Morning Cartoons Guide to Chattanooga!</p>
+            <p id="login--subtitle">Log in to your account</p>
+            <fieldset>
+              <label htmlFor="inputUsername"> Email</label>
+              <input className="form-control" ref={username} type="username" id="username" placeholder="Email address" required autoFocus />
+            </fieldset>
+            <fieldset>
+              <label htmlFor="inputPassword"> Password </label>
+              <input className="form-control" ref={password} type="password" id="password" placeholder="Password" required />
+            </fieldset>
+            <fieldset>
+              <button type="submit">Sign In</button>
+            </fieldset>
+            <fieldset>
+            <p >Art and Code by Zach Dugger</p>
           </fieldset>
-          <fieldset>
-            <label htmlFor="inputPassword"> Password </label>
-            <input ref={password} type="password" id="password" placeholder="Password" required />
-          </fieldset>
-          <fieldset>
-            <button type="submit">Sign In</button>
-          </fieldset>
-        </form>
-      </section>
-      <section>
-        <Link to="/register">Not a member yet?</Link>
-      </section>
+          </form>
+        </section>
+        <section>
+          <Link to="/register">Not a member yet?</Link>
+        </section>
     </main>
   )
 }

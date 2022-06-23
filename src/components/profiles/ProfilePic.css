@@ -51,9 +51,10 @@
 }
 
 
-#profile-header {
+#profile-pic-header {
     font-family: 'introrustg-base2line';
     font-size: 250%;
+    color: white;
 }
 
 #current-profile-pic {

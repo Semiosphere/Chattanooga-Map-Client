@@ -8,7 +8,7 @@ export const ProfilePicForm = () => {
     const history = useHistory();
 
     // //fetches from "profile locations" table in database;
-     const [pics, setPics] = useState([]);
+    const [pics, setPics] = useState([]);
     // useEffect(() => {
     //     fetch("http://localhost:8000/profilepics", {
     //         headers: {
@@ -86,7 +86,7 @@ export const ProfilePicForm = () => {
 
 
                 <div id={`profile-pic-view`}>
-                    <p id="profile-header">Select a profile pic!</p>
+                    <p id="profile-pic-header">Select a profile pic!</p>
                     <img id="current-profile-pic" src={profile.profile_pic?.src}></img>
                     <div id="profile-pic-container">
                         {pics.map((pic) => {
@@ -103,6 +103,8 @@ export const ProfilePicForm = () => {
                 <div className="cmc-logo-container">
                     <img id="cmc-logo" src="https://res.cloudinary.com/dvdug0mzg/image/upload/v1655402702/Chattanooga%20Map/CMC_text_mxyiqp.png"></img>
                 </div>
+
+                
 
             </div>
         </>

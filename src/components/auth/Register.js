@@ -26,19 +26,23 @@ export const Register = () => {
   }
 
 return (
-  <main>
-    <form onSubmit={handleRegister}>
-      <h3>Register an account</h3>
+  <main className="auth-container" style={{ height: '100vh'}}>
+    <form className="form--login" onSubmit={handleRegister}>
+      <p id="login--title">The Chatturday Morning Cartoons Guide to Chattanooga!</p>
+      <p id="login--subtitle">Register an account</p>
       <fieldset>
-        <label htmlFor="inputUsername">Username</label>
-        <input ref={username} type="text" name="username" placeholder="Username" required />
+        <label htmlFor="inputUsername">Email</label>
+        <input className="form-control" ref={username} type="text" name="username" placeholder="Email" required />
       </fieldset>
       <fieldset>
         <label htmlFor="inputPassword"> Password </label>
-        <input ref={password} type="password" name="password" placeholder="Password" required />
+        <input className="form-control" ref={password} type="password" name="password" placeholder="Password" required />
       </fieldset>
       <fieldset>
         <button type="submit">Register</button>
+      </fieldset>
+      <fieldset>
+        <p >Art and Code by Zach Dugger</p>
       </fieldset>
     </form>
     <section>

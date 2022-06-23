@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'introrustg-base2line';
+    src: url('introrustg-base2line-webfont.woff2') format('woff2'),
+        url('introrustg-base2line-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'introheadr-base';
+    src: url('introheadr-base-webfont.woff2') format('woff2'),
+        url('introheadr-base-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+.auth-container {
+    background-image: url(https://res.cloudinary.com/dvdug0mzg/image/upload/v1655239993/Chattanooga%20Map/BG_test_ajxead.png);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dialog {
+    min-width: 15rem;
+    min-height: 5rem;
+}
+
+.button--close {
+    position: relative;
+    bottom: -2rem;
+}
+
+
+
+.form--login {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 10%;
+    text-align: center;
+    font-family: 'introheadr-base';
+    font-size: 150%;
+    color: rgb(0, 0, 0);
+    width: 50%;
+    min-height: 25rem;
+    min-width: 45rem;
+    flex-direction: column;
+    place-content: center;
+}
+
+#login--title {
+    font-family: 'introrustg-base2line';
+    font-size: 150%;
+    color: white;
+}
+
+#login--subtitle {
+    font-family: 'introrustg-base2line';
+    font-size: 110%;
+    color: white;
+}
+
+.form-control {
+    text-align: center;
+    display: inline-block;
+    width: 94%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    -webkit-transition: border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+fieldset {
+    border: none;
+}

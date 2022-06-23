@@ -8,26 +8,28 @@ export const DiscoveryForm = () => {
     const history = useHistory();
 
     //fetches from "profile locations" table in database
-    const [ discoveries, setDiscoveries ] = useState({});
+    const [discoveries, setDiscoveries] = useState({});
     useEffect(() => {
-      fetch("http://localhost:8000/profiles/profile", {headers:{
-        "Authorization": `Token ${localStorage.getItem("auth_token")}`
-      }} )
-      .then((res) => res.json())
-      .then((discoveryArray) => {
-        setDiscoveries(discoveryArray);
-      });
-    }, [] );
+        fetch("http://localhost:8000/profiles/profile", {
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("auth_token")}`
+            }
+        })
+            .then((res) => res.json())
+            .then((discoveryArray) => {
+                setDiscoveries(discoveryArray);
+            });
+    }, []);
 
     const logout = () => {
         localStorage.removeItem("auth_token");
         history.push(`/login`);
-      };
-    
+    };
+
 
     return (
         <>
-            <div id="discovery-menu-background" style={{ height: '100vh'}}>
+            <div id="discovery-menu-background" style={{ height: '100vh' }}>
 
                 <div className="side-menu">
                     <p id="profile-header-text">My Profile</p>
