@@ -40,8 +40,8 @@ export const Login = () => {
             <p id="login--title">The Chatturday Morning Cartoons Guide to Chattanooga!</p>
             <p id="login--subtitle">Log in to your account</p>
             <fieldset>
-              <label htmlFor="inputUsername"> Email</label>
-              <input className="form-control" ref={username} type="username" id="username" placeholder="Email address" required autoFocus />
+              <label htmlFor="inputUsername"> Username</label>
+              <input className="form-control" ref={username} type="username" id="username" placeholder="Username" required autoFocus />
             </fieldset>
             <fieldset>
               <label htmlFor="inputPassword"> Password </label>

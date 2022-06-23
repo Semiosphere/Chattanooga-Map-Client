@@ -31,8 +31,8 @@ return (
       <p id="login--title">The Chatturday Morning Cartoons Guide to Chattanooga!</p>
       <p id="login--subtitle">Register an account</p>
       <fieldset>
-        <label htmlFor="inputUsername">Email</label>
-        <input className="form-control" ref={username} type="text" name="username" placeholder="Email" required />
+        <label htmlFor="inputUsername">Username</label>
+        <input className="form-control" ref={username} defaultValue="" type="text" name="username" placeholder="Username" required />
       </fieldset>
       <fieldset>
         <label htmlFor="inputPassword"> Password </label>
