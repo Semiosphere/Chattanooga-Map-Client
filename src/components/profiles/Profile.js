@@ -9,7 +9,7 @@ export const ProfileForm = () => {
 
     //fetches from "profile locations" table in database;
     useEffect(() => {
-      fetch("http://localhost:8000/profiles/profile", {headers:{
+      fetch("https://cmc-guide-to-chattanooga.herokuapp.com/profiles/profile", {headers:{
         "Authorization": `Token ${localStorage.getItem("auth_token")}`
       }} )
       .then((res) => res.json())

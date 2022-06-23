@@ -10,7 +10,7 @@ export const DiscoveryForm = () => {
     //fetches from "profile locations" table in database
     const [discoveries, setDiscoveries] = useState({});
     useEffect(() => {
-        fetch("http://localhost:8000/profiles/profile", {
+        fetch("https://cmc-guide-to-chattanooga.herokuapp.com/profiles/profile", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("auth_token")}`
             }

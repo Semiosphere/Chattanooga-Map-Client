@@ -29,7 +29,7 @@ export const ProfilePicForm = () => {
 
 
     const profileFetcher = () => {
-        return fetch("http://localhost:8000/profiles/profile", {
+        return fetch("https://cmc-guide-to-chattanooga.herokuapp.com/profiles/profile", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("auth_token")}`
             }
@@ -62,7 +62,7 @@ export const ProfilePicForm = () => {
             body: JSON.stringify(updateProfile),
         };
 
-        return fetch(`http://localhost:8000/profiles/${profile.id}`, fetchOption)
+        return fetch(`https://cmc-guide-to-chattanooga.herokuapp.com/profiles/${profile.id}`, fetchOption)
             .then(profileFetcher)
     }
 

@@ -25,7 +25,7 @@ export const MapForm = () => {
   //This way, clicking a specific area of the Map image fetches the corresponding location
   const [ markers, setMarkers ] = useState([]);
     useEffect(() => {
-      fetch("http://localhost:8000/locations", {headers:{
+      fetch("https://cmc-guide-to-chattanooga.herokuapp.com/locations", {headers:{
         "Authorization": `Token ${localStorage.getItem("auth_token")}`
       }} )
       .then((res) => res.json())
@@ -37,7 +37,7 @@ export const MapForm = () => {
   //fetch profile info from server to display user's profile pic and save discoveries
     const [ profile, setProfiles ] = useState({});
       useEffect(() => {
-        fetch("http://localhost:8000/profiles/profile", {headers:{
+        fetch("https://cmc-guide-to-chattanooga.herokuapp.com/profiles/profile", {headers:{
           "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }} )
         .then((res) => res.json())
@@ -49,7 +49,7 @@ export const MapForm = () => {
   const [activeMarker, setActiveMarker] = useState({})
   //This function is added to the onClick below to add the clicked location to the logged in user's list of discoveries
   const postDiscovery = (location) => {
-    fetch(`http://localhost:8000/locations/${location.id}/discover`,
+    fetch(`https://cmc-guide-to-chattanooga.herokuapp.com/locations/${location.id}/discover`,
       {
         method: "POST",
         headers: {
