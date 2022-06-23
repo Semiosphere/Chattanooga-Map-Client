@@ -73,7 +73,7 @@ export const MapForm = () => {
 
       <div className="MapContainer" style={{ height: '100vh'}}>
         <div className="instructions-modal" style={{ display: modalDisplay }}>
-          <p id="modal-text">Explore the map by clicking and dragging. There are 15 discoveries to be made so click on everything to find them all!</p>
+          <p id="modal-text">Explore the map by clicking and dragging. There are 15 discoveries to be made so click around and find them all!</p>
           <button id="close-modal-button" onClick={() => setModalDisplay('none')}>
             Get started!
           </button>
@@ -82,12 +82,8 @@ export const MapForm = () => {
         <div className="cmc-logo-container">
           <img id="cmc-logo" src="https://res.cloudinary.com/dvdug0mzg/image/upload/v1655402702/Chattanooga%20Map/CMC_text_mxyiqp.png"></img>
         </div>
-
-        {/* <div className="top-banner" id="map-banner">
-          <h1 id="MapHeaderText">Explore the map and try clicking on anything interesting!</h1>
-        </div> */}
         
-        <img id="profile-page-button" src={profile.profile_pic?.src} onClick={() => history.push(`/profile`)}></img>
+        <img id="profile-page-button" src={profile.profile_pic?.src} onClick={() => history.push(`/profile`)} title="My Profile"></img>
 
         <div className={`info-box ${activeMarker.name?"show":"hide"}`} id="infoBox">
           <p id="location-name">{activeMarker.name}</p>

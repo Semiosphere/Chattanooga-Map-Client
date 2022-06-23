@@ -22,8 +22,30 @@
     align-items: baseline;
 }
 
+#profile-view {
+    width: 70%;
+}
+
 #profile-header {
-    color:aliceblue;
+    color: white;
+    font-family: 'introrustg-base2line';
+    font-size: 250%;
+    margin-left: 25%;
+    margin-bottom: 7%;
+}
+
+.profile-questions {
+    color: white;
+    font-family: 'introrustg-base2line';
+    font-size: 170%;
+    margin-left: 13%;
+}
+
+.profile-answers {
+    font-size: 120%;
+    margin-left: 13%;
+    color: white;
+    margin-bottom: 5%;
 }
 
 /* The following styles handle consistent elements across the menu pages */
@@ -49,9 +71,6 @@
 #profile-header-text {
     font-family: 'introscriptr-h2base';
     font-size: 300%;
-}
-
-#profile-header-text {
     color: white;
 }
 
@@ -69,4 +88,20 @@
 
 #logout-button {
     background-color: #DEAE06;
+}
+
+#profile-contact-info {
+    color: white;
+    font-family: 'introheadr-base';
+    display: inline;
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+.profile-info-header {
+    color: white;
+    font-family: 'introrustg-base2line';
+    display: inline;
+    margin-right: 6px;
+    margin-left: 10px;
 }

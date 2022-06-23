@@ -24,10 +24,21 @@
   position: fixed;
   z-index: 1;
   top: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.info-header {
+  font-family: 'introrustg-base2line';
 }
 
 #cmc-logo {
   width: 50%;
+}
+
+#MapImage {
+  background: none;
 }
 
 #MapHeaderText {
@@ -51,8 +62,6 @@ canvas {
 .MapContainer {
   background-image: url(https://res.cloudinary.com/dvdug0mzg/image/upload/v1655239993/Chattanooga%20Map/BG_test_ajxead.png);
 }
-
-
 
 /* The Overlay (background) */
 .info-box {
