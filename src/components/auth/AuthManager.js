@@ -1,5 +1,5 @@
 export const registerUser = (user) => {
-  return fetch("https://cmc-guide-to-chattanooga-c.herokuapp.com/register", {
+  return fetch("https://cmc-guide-to-chattanooga.herokuapp.com/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -11,7 +11,7 @@ export const registerUser = (user) => {
 }
 
 export const loginUser = (user) => {
-  return fetch("http://127.0.0.1:8000/login", {
+  return fetch("https://cmc-guide-to-chattanooga.herokuapp.com/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
